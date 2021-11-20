@@ -1,0 +1,3 @@
+administer best_price types:
+  title: 'Administer Best Price types'
+  restrict access: true
