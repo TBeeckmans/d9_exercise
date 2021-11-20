@@ -1,0 +1,5 @@
+name: Best price
+description: "Provides an entity to track product prices."
+package: custom
+type: module
+core_version_requirement: ^9
