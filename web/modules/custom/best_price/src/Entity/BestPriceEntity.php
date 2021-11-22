@@ -3,6 +3,7 @@
 namespace Drupal\best_price\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 
@@ -153,4 +154,15 @@ class BestPriceEntity extends ContentEntityBase {
 
     return $fields;
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
+    parent::preCreate($storage_controller, $values);
+    $values += [
+      'uid' => \Drupal::currentUser()->id(),
+    ];
+  }
+
 }
