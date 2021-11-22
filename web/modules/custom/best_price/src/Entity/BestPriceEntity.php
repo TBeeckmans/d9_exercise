@@ -18,7 +18,7 @@ use Drupal\Core\Entity\ContentEntityBase;
  *   bundle_entity_type = "best_price_type",
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\Core\Entity\EntityListBuilder",
+ *     "list_builder" = "Drupal\best_price\BestPriceListBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "access" = "Drupal\Core\Entity\EntityAccessControlHandler",
  *     "form" = {
