@@ -25,7 +25,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   },
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\Core\Entity\EntityListBuilder",
+ *     "list_builder" = "Drupal\best_price\BestPriceTypeListBuilder",
  *     "form" = {
  *       "default" = "Drupal\best_price\Form\BestPriceTypeEntityForm",
  *       "add" = "Drupal\best_price\Form\BestPriceTypeEntityForm",
