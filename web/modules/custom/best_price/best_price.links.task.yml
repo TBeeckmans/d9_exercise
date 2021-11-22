@@ -1,0 +1,16 @@
+best_price_entity_task_view:
+  route_name: entity.best_price.canonical
+  base_route: entity.best_price.canonical
+  title: 'View'
+
+best_price_entity_task_edit:
+  route_name: entity.best_price.edit_form
+  base_route: entity.best_price.canonical
+  title: 'Edit'
+
+best_price_entity_task_delete:
+  route_name:  entity.best_price.delete_form
+  base_route:  entity.best_price.canonical
+  title: Delete
+  weight: 10
+

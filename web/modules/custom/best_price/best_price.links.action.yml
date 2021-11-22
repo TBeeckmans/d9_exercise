@@ -1,0 +1,12 @@
+best_price_entity_action_add:
+  route_name: entity.best_price.add_page
+  title: 'Add best price entity'
+  appears_on:
+    - entity.best_price.collection
+
+best_price_type_entity_action_add:
+  route_name: entity.best_price_type.add_form
+  title: 'Add best price entity type (bundle)'
+  appears_on:
+    - entity.best_price_type.collection
+

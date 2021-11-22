@@ -1,0 +1,11 @@
+best_price_entity_collection_menu:
+  title: 'Best price list'
+  route_name: entity.best_price.collection
+  description: 'List of Best prices'
+  parent: system.admin_content
+
+best_price_type_entity_collection_menu:
+  title: 'Best price types'
+  route_name: entity.best_price_type.collection
+  description: 'List of Best price types (bundles)'
+  parent: system.admin_structure
