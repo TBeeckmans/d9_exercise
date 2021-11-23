@@ -68,6 +68,11 @@ class BestPriceHomepageBlock extends BlockBase implements ContainerFactoryPlugin
    */
   public function build() {
     $build = [];
+
+    $build['#cache']['tags'] = [
+      'best_price_list',
+    ];
+
     $bestPriceManager = $this->entityTypeManager->getStorage('best_price');
     $bestPriceViewBuilder = $this->entityTypeManager->getViewBuilder('best_price');
 
@@ -87,6 +92,7 @@ class BestPriceHomepageBlock extends BlockBase implements ContainerFactoryPlugin
       ];
 
       $bestPriceEntity = \array_pop($bestPriceEntities);
+      $this->renderer->addCacheableDependency($build, $bestPriceEntity);
       $build['product'] = $bestPriceViewBuilder->view($bestPriceEntity, 'teaser');
     }
 
