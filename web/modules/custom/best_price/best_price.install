@@ -37,7 +37,7 @@ function best_price_update_9001() {
   \Drupal::entityDefinitionUpdateManager()
     ->installFieldStorageDefinition('uid', 'best_price', 'best_price', $field_storage_definition);
 
-  $fields['name'] = BaseFieldDefinition::create('string')
+  $field_storage_definition = BaseFieldDefinition::create('string')
     ->setLabel(t('Name'))
     ->setDescription(t('The name of the Best Price entity.'))
     ->setSettings([
