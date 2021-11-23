@@ -3,9 +3,11 @@
 namespace Drupal\best_price\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\user\UserInterface;
 
 /**
  * Defines the Best Price entity.
@@ -53,7 +55,100 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   field_ui_base_route = "entity.best_price_type.edit_form",
  * )
  */
-class BestPriceEntity extends ContentEntityBase {
+class BestPriceEntity extends ContentEntityBase implements BestPriceEntityInterface {
+
+  use EntityChangedTrait;
+
+  /**
+   * @return \Drupal\user\Entity\User
+   */
+  public function getOwner() {
+    return $this->get('uid')->entity;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getOwnerId() {
+    return $this->get('uid')->target_id;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setOwner(UserInterface $account) {
+    $this->set('uid', $account->id());
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setOwnerId($uid) {
+    $this->set('uid', $uid);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getName() {
+    return $this->get('name')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setName($name) {
+    $this->set('name', $name);
+    return $this;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getPrice() {
+    return $this->get('price')->value;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function setPrice($price) {
+    $this->set('price', $price);
+    return $this;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getStore() {
+    return $this->get('store')->value;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function setStore($store) {
+    $this->set('price', $store);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCreatedTime() {
+    return $this->get('created')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setCreatedTime($timestamp) {
+    $this->set('created', $timestamp);
+    return $this;
+  }
+
 
   /**
    * {@inheritdoc}
@@ -63,7 +158,7 @@ class BestPriceEntity extends ContentEntityBase {
 
     $fields['uid'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
-      ->setDescription(t('The user ID of author of the Best Peice entity.'))
+      ->setDescription(t('The user ID of author of the Best Price entity.'))
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
       ->setDisplayOptions('view', [
