@@ -47,6 +47,7 @@ class BestPriceListBuilder extends EntityListBuilder {
       $container->get('date.formatter')
     );
   }
+
   /**
    * {@inheritdoc}
    */

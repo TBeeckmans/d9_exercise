@@ -28,6 +28,7 @@ use Drupal\user\UserInterface;
  *   },
  *   bundle_entity_type = "best_price_type",
  *   handlers = {
+ *     "storage" = "Drupal\best_price\BestPriceStorage",
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\best_price\BestPriceListBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
