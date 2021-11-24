@@ -1,0 +1,22 @@
+id: best_price_user
+label: 'Best Price Reporter'
+migration_group: best_price
+
+source:
+  plugin: 'csv'
+  path: 'modules/custom/best_price/migrations/best_price_product.csv'
+  delimiter: ','
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - user
+
+process:
+  name: user
+  mail: user
+  status:
+    plugin: default_value
+    default_value: 0
+
+destination:
+  plugin: entity:user

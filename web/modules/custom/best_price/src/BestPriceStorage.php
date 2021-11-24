@@ -52,7 +52,7 @@ class BestPriceStorage extends SqlContentEntityStorage {
    * @inheritDoc
    */
   public function delete(array $entities) {
-    $this->cacheInvalidator->invalidateTags('best_price_list');
+    $this->cacheInvalidator->invalidateTags(['best_price_list']);
     return parent::delete($entities);
   }
 

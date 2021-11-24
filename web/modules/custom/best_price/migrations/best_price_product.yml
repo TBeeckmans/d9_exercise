@@ -1,0 +1,33 @@
+id: best_price_product
+label: 'Best Price'
+migration_group: best_price
+
+source:
+  plugin: 'csv'
+  path: 'modules/custom/best_price/migrations/best_price_product.csv'
+  delimiter: ','
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - id
+
+process:
+  name: product
+  price: price
+  store: store
+  uid:
+    plugin: migration_lookup
+    migration: best_price_user
+    source: user
+
+destination:
+  plugin: entity:best_price
+  default_bundle: physical_store
+  overwrite_properties:
+    - name
+    - price
+    - store
+    -
+migration_dependencies:
+  optional:
+    - best_price_user

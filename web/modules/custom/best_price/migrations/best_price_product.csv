@@ -1,0 +1,4 @@
+id,product,price,store,user
+1,"Bicycle helmet",22.20,"BikeStore","john@doe.com"
+2,"Bicycle bell",4.12,"Saferide","jane@doe.com"
+3,"Bicycle saddle",21.65,"Amazon","jane@doe.com"
