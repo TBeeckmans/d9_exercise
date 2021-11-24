@@ -1,0 +1,20 @@
+uuid: 8a879dc7-6b00-4b38-ad02-4bfe9f42f0cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - best_price
+  theme:
+    - bartik
+id: latestbestprice
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: best_price_homepage_block
+settings:
+  id: best_price_homepage_block
+  label: 'Latest Best Price'
+  provider: best_price
+  label_display: visible
+visibility: {  }

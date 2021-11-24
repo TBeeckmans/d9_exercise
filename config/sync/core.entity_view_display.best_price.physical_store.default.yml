@@ -1,0 +1,36 @@
+uuid: 64ec0dcf-7d75-49c9-adec-ef32fb9e600c
+langcode: en
+status: true
+dependencies:
+  config:
+    - best_price.best_price_type.physical_store
+id: best_price.physical_store.default
+targetEntityType: best_price
+bundle: physical_store
+mode: default
+content:
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  store:
+    label: hidden
+    type: string
+    weight: 1
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden: {  }

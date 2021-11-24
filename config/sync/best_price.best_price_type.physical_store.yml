@@ -1,0 +1,6 @@
+uuid: 904af6c4-6137-4acc-8d25-5ec368afe5d7
+langcode: en
+status: true
+dependencies: {  }
+id: physical_store
+label: 'Physical store'

@@ -1,0 +1,30 @@
+uuid: deaea322-3250-4132-b988-4994a0afe181
+langcode: en
+status: true
+dependencies:
+  config:
+    - best_price.best_price_type.physical_store
+    - core.entity_view_mode.best_price.teaser
+id: best_price.physical_store.teaser
+targetEntityType: best_price
+bundle: physical_store
+mode: teaser
+content:
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  store:
+    label: hidden
+    type: string
+    weight: 1
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  uid: true

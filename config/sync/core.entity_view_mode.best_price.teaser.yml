@@ -1,0 +1,10 @@
+uuid: 9d6eef5a-01e8-4e09-8f66-8b9620921b36
+langcode: en
+status: true
+dependencies:
+  module:
+    - best_price
+id: best_price.teaser
+label: Teaser
+targetEntityType: best_price
+cache: true
