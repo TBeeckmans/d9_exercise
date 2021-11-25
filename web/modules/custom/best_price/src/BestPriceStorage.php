@@ -2,6 +2,7 @@
 
 namespace Drupal\best_price;
 
+use Drupal\best_price\Entity\BestPriceEntityInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Cache\MemoryCache\MemoryCacheInterface;
@@ -63,4 +64,5 @@ class BestPriceStorage extends SqlContentEntityStorage {
     $this->cacheInvalidator->invalidateTags(['best_price_list']);
     return parent::save($entity);
   }
+
 }
