@@ -24,6 +24,7 @@
         "drupal/migrate_plus": "^5.1",
         "drupal/migrate_source_csv": "^3.4",
         "drupal/migrate_tools": "@dev",
+        "drupal/webform": "^6.1",
         "drush/drush": "^10.6"
     },
     "conflict": {
