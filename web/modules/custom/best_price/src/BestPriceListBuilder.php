@@ -53,6 +53,7 @@ class BestPriceListBuilder extends EntityListBuilder {
    */
   public function buildHeader(){
     $header['id'] = $this->t('Id');
+    $header['name'] = $this->t('Name');
     $header['bundle_label'] = $this->t('Bundle');
     $header['owner'] = $this->t('Owner');
     $header['created'] = $this->t('Created');
@@ -66,9 +67,10 @@ class BestPriceListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     /* @var \Drupal\best_price\Entity\BestPriceEntityInterface $entity */
-    $row['id'] = $entity->toLink($entity->id());
+    $row['id'] = $entity->id();
+    $row['name'] = $entity->toLink($entity->getName());
     $row['bundle_label'] = $entity->bundle->entity->label();
-    $row['owner'] = ($entity->get('uid')->isEmpty()) ? '' : $entity->getOwner()->toLink($entity->getOwner()->label());
+    $row['owner'] = ($entity->get('uid')->isEmpty() || is_null($entity->getOwner()) || $entity->getOwnerId() == 0) ? '' : $entity->getOwner()->toLink($entity->getOwner()->label());
     $row['created'] = $this->dateFormatter->format($entity->getCreatedTime(), 'short');
     $row['changed'] = $this->dateFormatter->format($entity->getChangedTime(), 'short');
 

@@ -27,7 +27,7 @@ destination:
     - name
     - price
     - store
-    -
+
 migration_dependencies:
   optional:
     - best_price_user
