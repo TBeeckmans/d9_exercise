@@ -48,7 +48,6 @@ class BestPriceFormBlock extends BlockBase implements ContainerFactoryPluginInte
   public function build() {
     $build = [];
 
-    // Add a form to add nodes to a watch later list.
     $build['form'] = $this->formBuilder->getForm(
       'Drupal\best_price\Form\BestPriceUserForm',
       'optional_argument_1',
