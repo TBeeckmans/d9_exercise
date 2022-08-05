@@ -293,6 +293,14 @@ $settings['hash_salt'] = '';
  * allow the container to be invalidated as soon as code is deployed.
  */
 # $settings['deployment_identifier'] = \Drupal::VERSION;
+# // Set a different deployment identifier when using drush on CLI.
+# // This supports different drush versions in a non-standard location
+# // Otherwise running drush commands from a non-standard location breaks
+# // the container for apache or other drush commands.
+# if ((defined('STDIN') || in_array(PHP_SAPI, ['cli', 'cli-server', 'phpdbg'])) && version_compare(\Drush\Drush::getVersion(), '10.3.0', '>=')) {
+#   $settings['deployment_identifier'] = \Drush\Drush::getVersion() . '-' . \Drupal::VERSION;
+# }
+
 
 /**
  * Access control for update.php script.
